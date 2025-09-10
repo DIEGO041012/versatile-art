@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Versátile Art - Principal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --principal: #9B59B6;
+      --complementario: #1A1A1A;
+      --secundario: #BDC3C7;
+      --detalle: #FFFFFF;
+    }
+    @keyframes fadeInZoom {
+      0% { opacity: 0; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    .fade-in-zoom { animation: fadeInZoom 1.5s ease-out forwards; }
+  </style>
+</head>
+<body class="bg-[var(--secundario)] text-[var(--complementario)]">
+
+  <!-- Navbar -->
+  <header class="bg-[var(--complementario)] text-[var(--detalle)] fixed w-full z-10 top-0 shadow-lg">
+    <nav class="container mx-auto flex items-center justify-between p-4">
+      <!-- Logo -->
+      <a href="./principal.html" class="text-2xl font-bold text-[var(--principal)]">Versátile Art</a>
+
+      <!-- Botón hamburguesa -->
+      <button id="menu-btn" class="md:hidden text-white text-2xl focus:outline-none">☰</button>
+
+      <!-- Links -->
+      <div id="menu" class="hidden md:flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 font-medium bg-[var(--complementario)] md:bg-transparent p-4 md:p-0 rounded-lg absolute md:static top-16 left-0 w-full md:w-auto">
+        <a href="./huevos.html" class="hover:text-[var(--principal)]">Huevos</a>
+        <a href="./lociones.html" class="hover:text-[var(--principal)]">Lociones</a>
+        
+        <!-- Dropdown Variedades -->
+        <div class="relative group">
+          <button class="hover:text-[var(--principal)] flex items-center space-x-1 focus:outline-none">
+            <span>Variedades</span>
+            <svg class="w-4 h-4 transform group-hover:rotate-180 transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <!-- Menú desplegable -->
+          <div class="absolute left-0 mt-2 w-48 bg-white text-[var(--complementario)] rounded-lg shadow-lg hidden group-hover:block">
+            <a href="./sublimaciones.html" class="block px-4 py-2 hover:bg-[var(--principal)] hover:text-white">Sublimaciones</a>
+            <a href="./calzado.html" class="block px-4 py-2 hover:bg-[var(--principal)] hover:text-white">Calzado</a>
+            <a href="./tecnologia.html" class="block px-4 py-2 hover:bg-[var(--principal)] hover:text-white">Tecnología</a>
+          </div>
+        </div>
+
+        <!-- Buscador -->
+        <div>
+          <input type="text" placeholder="Buscar..."
+            class="px-3 py-1 rounded-lg border focus:outline-none focus:ring-2 focus:ring-[var(--principal)] text-black w-full md:w-auto">
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Contenido -->
+  <main class="pt-20">
+    <!-- Banner -->
+    <div class="relative h-[400px] w-full rounded-2xl shadow-md overflow-hidden mb-8">
+          <!-- Imagen de fondo -->
+          <img src="img/banner3.jpg" 
+              alt="Banner" 
+              class="absolute inset-0 w-full h-full object-cover">
+          
+          <!-- Overlay oscuro -->
+          <div class="absolute inset-0 bg-black/50"></div>
+          
+          <!-- Texto centrado con animación -->
+          <div class="relative flex items-center justify-center h-full">
+            <h3 class="text-5xl font-extrabold text-white drop-shadow-2xl tracking-wide fade-in-zoom">
+              Lo mejor en <span class="text-purple-400">Huevoss</span>
+            </h3>
+          </div>
+        </div>
+
+    <!-- Productos -->
+    <section class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6 text-[var(--principal)]">Lociones</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+        <!-- Producto ejemplo 1 -->
+        <div class="bg-white rounded-2xl shadow-lg p-4">
+        <img src="img/locion1.webp" alt="Loción Versace" class="w-full h-48 object-cover rounded-xl mb-3">
+        <h4 class="font-semibold text-lg">Loción Versace</h4>
+        <p class="text-[var(--principal)] font-bold">$220.000</p>
+        <button onclick="mostrarDetalle('Loción Versace', 'Fragancia intensa y elegante para ocasiones especiales.', '220.000', 'img/locion1.webp')" class="mt-3 px-4 py-2 bg-[var(--principal)] text-white rounded-lg hover:bg-purple-700">Detalles</button>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg p-4">
+        <img src="img/locion2.webp" alt="Loción Dior" class="w-full h-48 object-cover rounded-xl mb-3">
+        <h4 class="font-semibold text-lg">Loción Dior</h4>
+        <p class="text-[var(--principal)] font-bold">$300.000</p>
+        <button onclick="mostrarDetalle('Loción Dior', 'Perfume exclusivo con notas frescas y sofisticadas.', '300.000', 'img/locion2.webp')" class="mt-3 px-4 py-2 bg-[var(--principal)] text-white rounded-lg hover:bg-purple-700">Detalles</button>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg p-4">
+        <img src="img/locion3.webp" alt="Loción Hugo Boss" class="w-full h-48 object-cover rounded-xl mb-3">
+        <h4 class="font-semibold text-lg">Loción Hugo Boss</h4>
+        <p class="text-[var(--principal)] font-bold">$250.000</p>
+        <button onclick="mostrarDetalle('Loción Hugo Boss', 'Fragancia moderna con notas amaderadas.', '250.000', 'img/locion3.')" class="mt-3 px-4 py-2 bg-[var(--principal)] text-white rounded-lg hover:bg-purple-700">Detalles</button>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg p-4">
+        <img src="img/locion4.webp" alt="Loción Armani" class="w-full h-48 object-cover rounded-xl mb-3">
+        <h4 class="font-semibold text-lg">Loción Armani</h4>
+        <p class="text-[var(--principal)] font-bold">$280.000</p>
+        <button onclick="mostrarDetalle('Loción Armani', 'Elegancia en cada gota, notas cítricas y frescas.', '280.000', 'img/locion4.webp')" class="mt-3 px-4 py-2 bg-[var(--principal)] text-white rounded-lg hover:bg-purple-700">Detalles</button>
+      </div>
+
+      <!-- 🔥 Repite la misma estructura hasta llegar a 16 productos -->
+      <div class="bg-white rounded-2xl shadow-lg p-4">
+        <img src="img/locion5.webp" alt="Loción CK One" class="w-full h-48 object-cover rounded-xl mb-3">
+        <h4 class="font-semibold text-lg">Loción CK One</h4>
+        <p class="text-[var(--principal)] font-bold">$180.000</p>
+        <button onclick="mostrarDetalle('Loción CK One', 'Unisex, fresca y juvenil, ideal para el día a día.', '180.000', 'img/locion5.webp')" class="mt-3 px-4 py-2 bg-[var(--principal)] text-white rounded-lg hover:bg-purple-700">Detalles</button>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg p-4">
+        <img src="img/locion6.webp" alt="Loción Polo Blue" class="w-full h-48 object-cover rounded-xl mb-3">
+        <h4 class="font-semibold text-lg">Loción Polo Blue</h4>
+        <p class="text-[var(--principal)] font-bold">$260.000</p>
+        <button onclick="mostrarDetalle('Loción Polo Blue', 'Fragancia marina y fresca, ideal para hombres dinámicos.', '260.000', 'img/locion6.webp')" class="mt-3 px-4 py-2 bg-[var(--principal)] text-white rounded-lg hover:bg-purple-700">Detalles</button>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg p-4">
+        <img src="img/locion7.webp" alt="Loción Polo Blue" class="w-full h-48 object-cover rounded-xl mb-3">
+        <h4 class="font-semibold text-lg">Loción Polo Blue</h4>
+        <p class="text-[var(--principal)] font-bold">$260.000</p>
+        <button onclick="mostrarDetalle('Loción Polo Blue', 'Fragancia marina y fresca, ideal para hombres dinámicos.', '260.000', 'img/locion7.webp')" class="mt-3 px-4 py-2 bg-[var(--principal)] text-white rounded-lg hover:bg-purple-700">Detalles</button>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg p-4">
+        <img src="img/locion8.webp" alt="Loción Polo Blue" class="w-full h-48 object-cover rounded-xl mb-3">
+        <h4 class="font-semibold text-lg">Loción Polo Blue</h4>
+        <p class="text-[var(--principal)] font-bold">$260.000</p>
+        <button onclick="mostrarDetalle('Loción Polo Blue', 'Fragancia marina y fresca, ideal para hombres dinámicos.', '260.000', 'img/locion8.webp')" class="mt-3 px-4 py-2 bg-[var(--principal)] text-white rounded-lg hover:bg-purple-700">Detalles</button>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg p-4">
+        <img src="img/locion9.webp" alt="Loción Polo Blue" class="w-full h-48 object-cover rounded-xl mb-3">
+        <h4 class="font-semibold text-lg">Loción Polo Blue</h4>
+        <p class="text-[var(--principal)] font-bold">$260.000</p>
+        <button onclick="mostrarDetalle('Loción Polo Blue', 'Fragancia marina y fresca, ideal para hombres dinámicos.', '260.000', 'img/locion9.webp')" class="mt-3 px-4 py-2 bg-[var(--principal)] text-white rounded-lg hover:bg-purple-700">Detalles</button>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg p-4">
+        <img src="img/locion10.webp" alt="Loción Polo Blue" class="w-full h-48 object-cover rounded-xl mb-3">
+        <h4 class="font-semibold text-lg">Loción Polo Blue</h4>
+        <p class="text-[var(--principal)] font-bold">$260.000</p>
+        <button onclick="mostrarDetalle('Loción Polo Blue', 'Fragancia marina y fresca, ideal para hombres dinámicos.', '260.000', 'img/locion10.webp')" class="mt-3 px-4 py-2 bg-[var(--principal)] text-white rounded-lg hover:bg-purple-700">Detalles</button>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg p-4">
+        <img src="img/locion11.webp" alt="Loción Polo Blue" class="w-full h-48 object-cover rounded-xl mb-3">
+        <h4 class="font-semibold text-lg">Loción Polo Blue</h4>
+        <p class="text-[var(--principal)] font-bold">$260.000</p>
+        <button onclick="mostrarDetalle('Loción Polo Blue', 'Fragancia marina y fresca, ideal para hombres dinámicos.', '260.000', 'img/locion11.webp')" class="mt-3 px-4 py-2 bg-[var(--principal)] text-white rounded-lg hover:bg-purple-700">Detalles</button>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg p-4">
+        <img src="img/locion12.webp" alt="Loción Polo Blue" class="w-full h-48 object-cover rounded-xl mb-3">
+        <h4 class="font-semibold text-lg">Loción Polo Blue</h4>
+        <p class="text-[var(--principal)] font-bold">$260.000</p>
+        <button onclick="mostrarDetalle('Loción Polo Blue', 'Fragancia marina y fresca, ideal para hombres dinámicos.', '260.000', 'img/locion12.webp')" class="mt-3 px-4 py-2 bg-[var(--principal)] text-white rounded-lg hover:bg-purple-700">Detalles</button>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg p-4">
+        <img src="img/locion12.webp" alt="Loción Polo Blue" class="w-full h-48 object-cover rounded-xl mb-3">
+        <h4 class="font-semibold text-lg">Loción Polo Blue</h4>
+        <p class="text-[var(--principal)] font-bold">$260.000</p>
+        <button onclick="mostrarDetalle('Loción Polo Blue', 'Fragancia marina y fresca, ideal para hombres dinámicos.', '260.000', 'img/locion12.webp')" class="mt-3 px-4 py-2 bg-[var(--principal)] text-white rounded-lg hover:bg-purple-700">Detalles</button>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg p-4">
+        <img src="img/locion13.webp" alt="Loción Polo Blue" class="w-full h-48 object-cover rounded-xl mb-3">
+        <h4 class="font-semibold text-lg">Loción Polo Blue</h4>
+        <p class="text-[var(--principal)] font-bold">$260.000</p>
+        <button onclick="mostrarDetalle('Loción Polo Blue', 'Fragancia marina y fresca, ideal para hombres dinámicos.', '260.000', 'img/locion13.webp')" class="mt-3 px-4 py-2 bg-[var(--principal)] text-white rounded-lg hover:bg-purple-700">Detalles</button>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg p-4">
+        <img src="img/locion14.webp" alt="Loción Polo Blue" class="w-full h-48 object-cover rounded-xl mb-3">
+        <h4 class="font-semibold text-lg">Loción Polo Blue</h4>
+        <p class="text-[var(--principal)] font-bold">$260.000</p>
+        <button onclick="mostrarDetalle('Loción Polo Blue', 'Fragancia marina y fresca, ideal para hombres dinámicos.', '260.000', 'img/locion14.webp')" class="mt-3 px-4 py-2 bg-[var(--principal)] text-white rounded-lg hover:bg-purple-700">Detalles</button>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg p-4">
+        <img src="img/locion15.webp" alt="Loción Polo Blue" class="w-full h-48 object-cover rounded-xl mb-3">
+        <h4 class="font-semibold text-lg">Loción Polo Blue</h4>
+        <p class="text-[var(--principal)] font-bold">$260.000</p>
+        <button onclick="mostrarDetalle('Loción Polo Blue', 'Fragancia marina y fresca, ideal para hombres dinámicos.', '260.000', 'img/locion15.webp')" class="mt-3 px-4 py-2 bg-[var(--principal)] text-white rounded-lg hover:bg-purple-700">Detalles</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal Detalles -->
+  <div id="modal" class="fixed inset-0 bg-black/60 hidden flex items-center justify-center z-[9999]">
+    <div class="bg-white rounded-2xl shadow-lg p-6 max-w-md w-11/12 relative">
+      <button onclick="cerrarModal()" class="absolute top-3 right-3 text-gray-600 hover:text-black">✖</button>
+      <img id="modal-img" src="" alt="Producto" class="w-full h-56 object-cover rounded-xl mb-4">
+      <h4 id="modal-title" class="text-2xl font-bold mb-2"></h4>
+      <p id="modal-desc" class="text-gray-700 mb-4"></p>
+      <p class="text-[var(--principal)] font-bold text-xl mb-4">$<span id="modal-price"></span></p>
+      <div class="flex items-center gap-3 mb-4">
+        <label for="cantidad" class="font-medium">Cantidad:</label>
+        <input id="cantidad" type="number" value="1" min="1" class="w-20 border rounded-lg px-2 py-1">
+      </div>
+      <button class="w-full px-4 py-2 bg-[var(--principal)] text-white rounded-lg hover:bg-purple-700">
+        Agregar al carrito
+      </button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-[var(--complementario)] text-[var(--detalle)] py-6 text-center">
+    <p>&copy; 2025 Versátiles Art - Todos los derechos reservados</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Modal
+    function mostrarDetalle(nombre, descripcion, precio, imagen) {
+      document.getElementById("modal-title").textContent = nombre;
+      document.getElementById("modal-desc").textContent = descripcion;
+      document.getElementById("modal-price").textContent = precio;
+      document.getElementById("modal-img").src = imagen;
+      document.getElementById("modal").classList.remove("hidden");
+      document.getElementById("modal").classList.add("flex");
+    }
+    function cerrarModal() {
+      document.getElementById("modal").classList.add("hidden");
+      document.getElementById("modal").classList.remove("flex");
+    }
+
+    // Menú hamburguesa
+    document.getElementById("menu-btn").addEventListener("click", () => {
+      document.getElementById("menu").classList.toggle("hidden");
+    });
+  </script>
+
+</body>
+</html>
