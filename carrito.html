@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito - Versátile Art</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --principal: #9B59B6;
+      --complementario: #1A1A1A;
+      --secundario: #BDC3C7;
+      --detalle: #FFFFFF;
+    }
+  </style>
+</head>
+<body class="bg-[var(--secundario)] text-[var(--complementario)]">
+
+  <!-- Navbar -->
+  <header class="bg-[var(--complementario)] text-[var(--detalle)] fixed w-full z-10 top-0 shadow-lg">
+    <nav class="container mx-auto flex items-center justify-between p-4">
+      <a href="./principal.html" class="text-2xl font-bold text-[var(--principal)]">Versátile Art</a>
+    </nav>
+  </header>
+
+  <!-- Contenido -->
+  <main class="pt-24 container mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-8 text-[var(--principal)]">Carrito de Compras</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- Tarjeta QR 1 -->
+      <div class="bg-white p-6 rounded-2xl shadow-lg">
+        <img src="img/qr1.png" alt="QR Pago 1" class="w-full h-64 object-contain mb-4">
+        <p class="font-semibold mb-4">Escanea para pagar con QR</p>
+        <a href="https://wa.me/573001112233?text=Hola%20quiero%20comprar%20mi%20pedido" target="_blank" 
+           class="block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">
+          Contactar por WhatsApp
+        </a>
+      </div>
+
+      <!-- Tarjeta QR 2 -->
+      <div class="bg-white p-6 rounded-2xl shadow-lg">
+        <img src="img/qr2.png" alt="QR Pago 2" class="w-full h-64 object-contain mb-4">
+        <p class="font-semibold mb-4">Pago seguro con QR</p>
+        <a href="https://wa.me/573001112233?text=Hola%20quiero%20comprar%20mi%20pedido" target="_blank" 
+           class="block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">
+          Contactar por WhatsApp
+        </a>
+      </div>
+
+      <!-- Tarjeta QR 3 -->
+      <div class="bg-white p-6 rounded-2xl shadow-lg">
+        <img src="img/qr3.png" alt="QR Pago 3" class="w-full h-64 object-contain mb-4">
+        <p class="font-semibold mb-4">Escanea y confirma tu pedido</p>
+        <a href="https://wa.me/573001112233?text=Hola%20quiero%20comprar%20mi%20pedido" target="_blank" 
+           class="block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">
+          Contactar por WhatsApp
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[var(--complementario)] text-[var(--detalle)] py-6 mt-10 text-center">
+    <p>&copy; 2025 Versátile Art - Todos los derechos reservados</p>
+  </footer>
+
+</body>
+</html>
