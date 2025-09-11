@@ -208,9 +208,9 @@
       </div>
       
       <!-- Botón comprar -->
-      <button class="w-full px-4 py-2 bg-[var(--principal)] text-white rounded-lg hover:bg-purple-700">
-        Agregar al carrito
-      </button>
+      <button onclick="irAlCarrito()" class="w-full px-4 py-2 bg-[var(--principal)] text-white rounded-lg hover:bg-purple-700">
+  Agregar al carrito
+</button>
     </div>
   </div>
 
@@ -241,6 +241,11 @@
     menuBtn.addEventListener("click", () => {
       menu.classList.toggle("hidden");
     });
+
+    //boton carrito
+    function irAlCarrito() {
+    window.location.href = "carrito.html";
+  }
   </script>
 
 </body>
